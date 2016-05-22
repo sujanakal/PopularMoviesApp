@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">PopularMoviez</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_detailed_">Detailed_Activity</string>
+
+    <string name="pref_title">Sort By</string>
+    <string name="pref_dialog_title">Sort By</string>
+    <string-array name="pref_entries">
+        <item>Popularity</item>
+        <item>Ratings</item>
+    </string-array>
+
+    <string-array name="pref_entry_values">
+        <item>Popularity</item>
+        <item>Ratings</item>
+    </string-array>
+
+    <string name="pref_default_value">Popularity</string>
+
+    <string name="pref_key">PREF_FILE</string>
+
+    <string name="pref_summary">Select most popular movies or most rated movies</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="myPreferenceActivity">Sort by</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.android.popularmoviez.MovieDetail">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_title"
+        android:paddingRight="@dimen/D_title_Right"
+        android:paddingTop="@dimen/D_title_top"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_title"
+        android:id="@+id/detail_release_date"
+        android:paddingTop="@dimen/D_release_date_top"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/D_release_date_right"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detail_release_date"
+        android:layout_alignParentRight="true"
+        android:paddingTop="@dimen/D_rating_top"
+        android:paddingRight="@dimen/D_rating_right"
+        android:id="@+id/detail_rating"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_overview"
+        android:layout_below="@id/detail_rating"
+        android:padding="@dimen/D_overview_all"/>
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_poster"
+        android:padding="@dimen/D_poster_all"
+        android:layout_alignParentLeft="true"/>
+
+</RelativeLayout>
