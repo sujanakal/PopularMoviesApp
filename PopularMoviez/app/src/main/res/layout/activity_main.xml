@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/padding"
-    android:paddingRight="@dimen/padding"
-    android:paddingTop="@dimen/padding"
-    android:paddingBottom="@dimen/padding"
     tools:context=".MainActivity"
     android:background="#B2EBF2">
+
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/app_bar"></include>
 
     <GridView
 

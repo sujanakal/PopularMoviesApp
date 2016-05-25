@@ -15,6 +15,8 @@ public class MovieDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
+        getWindow().setStatusBarColor(getResources().getColor(R.color.statusBar));
+
         Intent getIn = getIntent();
         Movie getMovie = (Movie) getIn.getSerializableExtra("Movie");
 
