@@ -16,7 +16,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -133,15 +132,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         Movie movie = (Movie) parent.getAdapter().getItem(position);
-        Toast.makeText(MainActivity.this, "" + movie.getTitle(),
-                Toast.LENGTH_SHORT).show();
+        /*Toast.makeText(MainActivity.this, "" + movie.getTitle(),
+                Toast.LENGTH_SHORT).show();*/
 
-            /*Movie movie = (Movie) parent.getAdapter().getItem(position);
 //              To open the new activity (detailed activity)
 //              when a image in the gridview is clicked using Intents
             Intent intent = new Intent(MainActivity.this , MovieDetail.class);
             intent.putExtra("Movie", movie);
-            startActivity(intent);*/
+            startActivity(intent);
 
     }
 
@@ -159,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             getJson(url_popularity,mPopularList);
             getJson(url_topvote,mTopVotedList);
 
-            mPopularList.toString();
 
             return null;
 
@@ -206,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public  void getJson(String web_address, ArrayList<Movie> list){
 
 //      The API key
-        String apiKey = "api key";
+        String apiKey = "enter the api Key here";
 
         BufferedReader buf = null;
         HttpsURLConnection http = null;
@@ -326,10 +323,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-    public class MovieImageAdapter extends ArrayAdapter<ArrayList> {
+    public class MovieImageAdapter extends ArrayAdapter<Movie> {
 
         private  Context context;
         private final ArrayList<Movie> movieObject;
+
 
         public MovieImageAdapter(Context context,ArrayList<Movie> movieObject) {
 
@@ -338,6 +336,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             this.movieObject = movieObject;
 
         }
+        @Override
+        public Movie getItem(int position)
+        {
+            return movieObject.get(position);
+        }
+
 
         @Override
 //      Getting the size of the arrayList

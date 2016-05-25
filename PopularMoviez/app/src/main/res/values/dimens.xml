@@ -7,12 +7,16 @@
     <dimen name="posterSpacing">2dp</dimen>
     <dimen name="columnWidth">130dp</dimen>
 
-    <dimen name="D_title_Right">40dp</dimen>
-    <dimen name="D_title_top">70dp</dimen>
-    <dimen name="D_release_date_top">10dp</dimen>
-    <dimen name="D_release_date_right">40dp</dimen>
-    <dimen name="D_rating_right">40dp</dimen>
-    <dimen name="D_rating_top">100dp</dimen>
-    <dimen name="D_overview_all">40dp</dimen>
-    <dimen name="D_poster_all">40dp</dimen>
+    <dimen name="linear_layout_left_padding">20dp</dimen>
+    <dimen name="linear_layout_main_padding">20dp</dimen>
+    <dimen name="overview_padding">20dp</dimen>
+    <dimen name="title_padding">20dp</dimen>
+
+    <dimen name="Title_text_size">45sp</dimen>
+    <dimen name="release_date_text_size">24sp</dimen>
+    <dimen name="poplarity_size">20sp</dimen>
+    <dimen name="detail_rate_count">14sp</dimen>
+    <dimen name="detail_overview_size">20sp</dimen>
+    <dimen name="title_elevation">10dp</dimen>
+
 </resources>

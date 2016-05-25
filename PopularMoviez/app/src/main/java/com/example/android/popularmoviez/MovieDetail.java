@@ -24,11 +24,17 @@ public class MovieDetail extends AppCompatActivity {
             TextView movieTitle = (TextView) findViewById(R.id.detail_title);
             movieTitle.setText(getMovie.getTitle());
 
+            TextView movieCount = (TextView) findViewById(R.id.detail_count);
+            movieCount.setText("Vote count: " + String.valueOf(getMovie.getVote_count()));
+
+            TextView moviePopularity = (TextView) findViewById(R.id.detail_popularity);
+            moviePopularity.setText(String.valueOf(getMovie.getPopularity()));
+
             TextView movieReleaseDate = (TextView) findViewById(R.id.detail_release_date);
             movieReleaseDate.setText(getMovie.getRelease_date());
 
             TextView movieRating = (TextView) findViewById(R.id.detail_rating);
-            movieRating.setText(getMovie.getVote_average());
+            movieRating.setText("Vote average: " + String.valueOf(getMovie.getVote_average()));
 
             TextView movieOverview = (TextView) findViewById(R.id.detail_overview);
             movieOverview.setText(getMovie.getOverview());

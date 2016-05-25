@@ -1,56 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.android.popularmoviez.MovieDetail">
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
 
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/detail_title"
-        android:paddingRight="@dimen/D_title_Right"
-        android:paddingTop="@dimen/D_title_top"
-        android:layout_alignParentRight="true"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detail_title"
-        android:id="@+id/detail_release_date"
-        android:paddingTop="@dimen/D_release_date_top"
-        android:layout_alignParentRight="true"
-        android:paddingRight="@dimen/D_release_date_right"/>
+        android:orientation="vertical">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/detail_release_date"
-        android:layout_alignParentRight="true"
-        android:paddingTop="@dimen/D_rating_top"
-        android:paddingRight="@dimen/D_rating_right"
-        android:id="@+id/detail_rating"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_title"
+            android:textSize="@dimen/Title_text_size"
+            android:text="@string/detail_movie_title"
+            android:paddingLeft="@dimen/title_padding"
+            android:paddingRight="@dimen/title_padding"
+            android:paddingTop="@dimen/title_padding"
+            android:elevation="@dimen/title_elevation"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/detail_overview"
-        android:layout_below="@id/detail_rating"
-        android:padding="@dimen/D_overview_all"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/linear_layout_main_padding">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:id="@+id/detail_poster"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/linear_layout_left_padding">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/detail_poster"
-        android:padding="@dimen/D_poster_all"
-        android:layout_alignParentLeft="true"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_release_date"
+                    android:textSize="@dimen/release_date_text_size"
+                    android:text="@string/detail_release_date"/>
 
-</RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_popularity"
+                    android:textSize="@dimen/poplarity_size"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_pop_value"
+                    android:id="@+id/detail_popularity"
+                    android:textSize="@dimen/poplarity_size" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_rating"
+                    android:textSize="@dimen/detail_rate_count"
+                    android:text="@string/detail_vote_average"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detail_count"
+                    android:textSize="@dimen/detail_rate_count"
+                    android:text="@string/detail_vote_count" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail_overview"
+            android:paddingLeft="@dimen/overview_padding"
+            android:paddingRight="@dimen/overview_padding"
+            android:paddingBottom="@dimen/overview_padding"
+            android:text="In 2016, one of the most successful animated franchises in the world returns with its biggest comedy adventure yet, KUNG FU PANDA 3. When Po's long-lost panda father suddenly reappears, the reunited duo travels to a secret panda paradise to meet scores of hilarious new panda characters. But when the supernatural villain Kai begins to sweep across China defeating all the kung fu masters, Po must do the impossible-learn to train a village full of his fun-loving, clumsy brethren to become the ultimate band of Kung Fu Pandas."
+            android:textSize="@dimen/detail_overview_size"/>
+
+    </LinearLayout>
+</ScrollView>
