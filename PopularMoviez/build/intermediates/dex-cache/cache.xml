@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
+        jar="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_622496586aac09947d7bac537d1dd7664f1ff0a8\classes.dex" />
+    </item>
+    <item
         jar="C:\Users\User\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
         <dex dex="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_c667406e52e8cb01ccf142d75f28ef7e2e0b94ab\classes.dex" />
+    </item>
+    <item
+        jar="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6c25f7d7ee863c2b7acb062801aa09da978593d9">
+        <dex dex="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8a2a2663a1881c871568a7294da3da8d18c2ac08\classes.dex" />
     </item>
     <item
         jar="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
@@ -21,20 +35,6 @@
         revision="23.0.2"
         sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
         <dex dex="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.3.2_e3fce14e77507bd6dee424079782a6ba229cf8e6\classes.dex" />
-    </item>
-    <item
-        jar="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
-        <dex dex="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_622496586aac09947d7bac537d1dd7664f1ff0a8\classes.dex" />
-    </item>
-    <item
-        jar="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="9f5e54de4410c187f8b0f8e8f1d4c49885bbbb8b">
-        <dex dex="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8a2a2663a1881c871568a7294da3da8d18c2ac08\classes.dex" />
     </item>
     <item
         jar="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
@@ -54,7 +54,7 @@
         jar="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="b1490df5dd5403ed3b26602ed1360bf3be156831">
+        sha1="e225fe9a743e5b193940010ed79f48937bd93a57">
         <dex dex="D:\popMoviez\PopularMoviesApp-master\PopularMoviez\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_39347d539342d87ed17b6c7315e52c2b788c9bb3\classes.dex" />
     </item>
     <item

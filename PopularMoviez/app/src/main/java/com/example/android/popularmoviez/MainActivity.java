@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public  void getJson(String web_address, ArrayList<Movie> list){
 
 //      The API key
-        String apiKey = "enter the api key here";
+        String apiKey = "Enter your api key here";
 
         BufferedReader buf = null;
         HttpsURLConnection http = null;
@@ -364,27 +364,39 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         public View getView(int position, View convertView, ViewGroup parent) {
 
             String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w185/";
+            myViewHolder viewHolder;
 
             Movie img = movieObject.get(position);
 
             if (convertView == null){
 
                 convertView = LayoutInflater.from(context).inflate(R.layout.popular_movies,parent,false);
+
+                viewHolder = new myViewHolder();
+                viewHolder.imageview = (ImageView) convertView.findViewById(R.id.popularMovies);
+                convertView.setTag(viewHolder);
+            }
+            else
+            {
+               viewHolder = (myViewHolder) convertView.getTag();
             }
 
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.popularMovies);
 
 //          Loading the image or the poster of the movie to image views in the gridview using Picasso
             Picasso
                     .with(context)
                     .load(IMAGE_BASE_URL+img.getPoster_path())
-                    .into(imageView);
+                    .into(viewHolder.imageview);
 
 
             return convertView;
         }
 
 
+        }
+
+        public class myViewHolder{
+            ImageView imageview;
         }
     }
 
