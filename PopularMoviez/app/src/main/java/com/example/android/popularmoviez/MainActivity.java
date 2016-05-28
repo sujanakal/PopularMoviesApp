@@ -20,7 +20,6 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -161,8 +160,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 //          string variables to hold the api request urls for popular movies and top rated movies
 
-            String url_popularity = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=";
-            String url_topvote = "https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=";
+            String url_popularity = "https://api.themoviedb.org/3/movie/popular?api_key=";
+            String url_topvote = "https://api.themoviedb.org/3/movie/top_rated?api_key=";
 
             getJson(url_popularity,mPopularList);
             getJson(url_topvote,mTopVotedList);
@@ -213,7 +212,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public  void getJson(String web_address, ArrayList<Movie> list){
 
 //      The API key
-        String apiKey = "enter api key here";
+        String apiKey = "Enter your api key here";
 
         BufferedReader buf = null;
         HttpsURLConnection http = null;
@@ -281,6 +280,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     JSONObject iObject = results.getJSONObject(i);
 
 //                  To store the details of each movie in objects of class Movie
+
                     Movie iMovie = new Movie();
 
                     iMovie.setBackdrop_path(iObject.getString(BACKDROP_PATH));
@@ -364,27 +364,39 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         public View getView(int position, View convertView, ViewGroup parent) {
 
             String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w185/";
+            myViewHolder viewHolder;
 
             Movie img = movieObject.get(position);
 
             if (convertView == null){
 
                 convertView = LayoutInflater.from(context).inflate(R.layout.popular_movies,parent,false);
+
+                viewHolder = new myViewHolder();
+                viewHolder.imageview = (ImageView) convertView.findViewById(R.id.popularMovies);
+                convertView.setTag(viewHolder);
+            }
+            else
+            {
+               viewHolder = (myViewHolder) convertView.getTag();
             }
 
-            ImageView imageView = (ImageView) convertView.findViewById(R.id.popularMovies);
 
 //          Loading the image or the poster of the movie to image views in the gridview using Picasso
             Picasso
                     .with(context)
                     .load(IMAGE_BASE_URL+img.getPoster_path())
-                    .into(imageView);
+                    .into(viewHolder.imageview);
 
 
             return convertView;
         }
 
 
+        }
+
+        public class myViewHolder{
+            ImageView imageview;
         }
     }
 

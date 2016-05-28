@@ -25,4 +25,9 @@
 
     </style>
 
+    <style name="LargeText">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
+    </style>
+
 </resources>

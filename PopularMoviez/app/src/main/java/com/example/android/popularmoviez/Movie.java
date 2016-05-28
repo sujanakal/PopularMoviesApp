@@ -1,11 +1,12 @@
 package com.example.android.popularmoviez;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  * Created by Suj🌠 on 25-03-2016.
  */
-public class Movie implements Serializable {
+public class Movie implements Parcelable {
     private String backdrop_path;
     private int id;
     private String original_title;
@@ -16,6 +17,53 @@ public class Movie implements Serializable {
     private String title;
     private  int vote_average;
     private int vote_count;
+
+    protected Movie()
+    {}
+
+    protected Movie(Parcel in) {
+        backdrop_path = in.readString();
+        id = in.readInt();
+        original_title = in.readString();
+        overview = in.readString();
+        release_date = in.readString();
+        poster_path = in.readString();
+        popularity = in.readDouble();
+        title = in.readString();
+        vote_average = in.readInt();
+        vote_count = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(backdrop_path);
+        dest.writeInt(id);
+        dest.writeString(original_title);
+        dest.writeString(overview);
+        dest.writeString(release_date);
+        dest.writeString(poster_path);
+        dest.writeDouble(popularity);
+        dest.writeString(title);
+        dest.writeInt(vote_average);
+        dest.writeInt(vote_count);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 
     public int getVote_count() {
 
@@ -87,6 +135,7 @@ public class Movie implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
+
 
 
 }
