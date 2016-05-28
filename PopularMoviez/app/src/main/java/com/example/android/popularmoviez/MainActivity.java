@@ -20,7 +20,6 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -281,6 +280,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     JSONObject iObject = results.getJSONObject(i);
 
 //                  To store the details of each movie in objects of class Movie
+
                     Movie iMovie = new Movie();
 
                     iMovie.setBackdrop_path(iObject.getString(BACKDROP_PATH));
