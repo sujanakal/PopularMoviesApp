@@ -1,12 +1,15 @@
 package com.example.android.popularmoviez;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
 
 import com.squareup.picasso.Picasso;
 
@@ -85,12 +89,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         myGrid = (GridView) findViewById(R.id.movie_grid);
+
+        Toolbar appbar = (Toolbar) findViewById(R.id.toolBar);
+        setSupportActionBar(appbar);
+
+        getWindow().setStatusBarColor(getResources().getColor(R.color.statusBar));
 
         MovieTask task = new MovieTask();
         task.execute();
@@ -151,8 +161,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 //          string variables to hold the api request urls for popular movies and top rated movies
 
-            String url_popularity = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=";
-            String url_topvote = "https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&api_key=";
+            String url_popularity = "https://api.themoviedb.org/3/movie/popular?api_key=";
+            String url_topvote = "https://api.themoviedb.org/3/movie/top_rated?api_key=";
 
             getJson(url_popularity,mPopularList);
             getJson(url_topvote,mTopVotedList);
@@ -203,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public  void getJson(String web_address, ArrayList<Movie> list){
 
 //      The API key
-        String apiKey = "enter the api Key here";
+        String apiKey = "enter the api key here";
 
         BufferedReader buf = null;
         HttpsURLConnection http = null;
