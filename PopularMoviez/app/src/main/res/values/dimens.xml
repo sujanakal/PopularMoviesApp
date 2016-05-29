@@ -19,4 +19,9 @@
     <dimen name="detail_overview_size">20sp</dimen>
     <dimen name="title_elevation">10dp</dimen>
 
+    <dimen name="appBarLayout">4dp</dimen>
+    <dimen name="appbar_elevation">4dp</dimen>
+    <dimen name="collapsing_poster_height">310dp</dimen>
+    <dimen name="LargeText">40sp</dimen>
+
 </resources>

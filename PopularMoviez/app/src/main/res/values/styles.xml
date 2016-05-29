@@ -3,7 +3,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Material">
         <!-- Customize your theme here. -->
-        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorPrimary">@color/colorTextPrimary</item>
 
     </style>
     
@@ -23,6 +23,11 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:adjustViewBounds">true</item>
 
+    </style>
+
+    <style name="LargeText">
+        <item name="android:textSize">@dimen/LargeText</item>
+        <item name="android:textColor">@color/colorTextPrimary</item>
     </style>
 
 </resources>

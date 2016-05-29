@@ -2,6 +2,7 @@ package com.example.android.popularmoviez;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,41 +14,56 @@ public class MovieDetail extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_movie_detail);
+        setContentView(R.layout.collapsible_appbar);
 
         getWindow().setStatusBarColor(getResources().getColor(R.color.statusBar));
 
         Intent getIn = getIntent();
         Movie getMovie = getIn.getParcelableExtra("Movie");
 
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout);
+
+        String title = "Title";
+
 
         if(getMovie != null)
         {
-            TextView movieTitle = (TextView) findViewById(R.id.detail_title);
-            movieTitle.setText(getMovie.getTitle());
+            title = getMovie.getTitle();
 
-            TextView movieCount = (TextView) findViewById(R.id.detail_count);
-            movieCount.setText("Vote count: " + String.valueOf(getMovie.getVote_count()));
+            collapsingToolbarLayout.setTitle(title);
+            collapsingToolbarLayout.setExpandedTitleTextAppearance(R.style.LargeText);
 
-            TextView moviePopularity = (TextView) findViewById(R.id.detail_popularity);
-            moviePopularity.setText(String.valueOf(getMovie.getPopularity()));
+            ImageView moviePoster_c = (ImageView) findViewById(R.id.detail_poster_collapsing);
 
-            TextView movieReleaseDate = (TextView) findViewById(R.id.detail_release_date);
-            movieReleaseDate.setText(getMovie.getRelease_date());
-
-            TextView movieRating = (TextView) findViewById(R.id.detail_rating);
-            movieRating.setText("Vote average: " + String.valueOf(getMovie.getVote_average()));
-
-            TextView movieOverview = (TextView) findViewById(R.id.detail_overview);
-            movieOverview.setText(getMovie.getOverview());
-
-            ImageView moviePoster = (ImageView) findViewById(R.id.detail_poster);
-
-            String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w185/";
+//            String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w342/";
+            String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/w780/";
 
             Picasso
                     .with(this)
-                    .load(IMAGE_BASE_URL+getMovie.getPoster_path())
+//                    .load(IMAGE_BASE_URL+getMovie.getPoster_path())
+                    .load(IMAGE_BASE_URL+getMovie.getBackdrop_path())
+                    .into(moviePoster_c);
+
+            TextView movieCount = (TextView) findViewById(R.id.detail_count_c);
+            movieCount.setText("Vote count: " + String.valueOf(getMovie.getVote_count()));
+
+            TextView moviePopularity = (TextView) findViewById(R.id.detail_popularity_c);
+            moviePopularity.setText(String.valueOf(getMovie.getPopularity()));
+
+            TextView movieReleaseDate = (TextView) findViewById(R.id.detail_release_date_c);
+            movieReleaseDate.setText(getMovie.getRelease_date());
+
+            TextView movieRating = (TextView) findViewById(R.id.detail_rating_c);
+            movieRating.setText("Vote average: " + String.valueOf(getMovie.getVote_average()));
+
+            TextView movieOverview = (TextView) findViewById(R.id.detail_overview_c);
+            movieOverview.setText(getMovie.getOverview());
+
+            ImageView moviePoster = (ImageView) findViewById(R.id.detail_poster);
+            String IMAGE_BASE_URL1 = "http://image.tmdb.org/t/p/w185/";
+            Picasso
+                    .with(this)
+                    .load(IMAGE_BASE_URL1+getMovie.getPoster_path())
                     .into(moviePoster);
 
         }
